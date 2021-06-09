@@ -16,7 +16,7 @@ all: test
 ## CI tasks
 ## ====================
 
-ci: test publish_pacts can_i_deploy $(DEPLOY_TARGET)
+ci: test
 
 publish_pacts: .env
 	@echo "\n========== STAGE: publish pacts ==========\n"
