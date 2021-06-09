@@ -16,7 +16,7 @@ all: test
 ## CI tasks
 ## ====================
 
-ci: test publish_pacts can_i_deploy $(DEPLOY_TARGET)
+ci: test_pact publish_pacts can_i_deploy $(DEPLOY_TARGET)
 
 publish_pacts: .env
 	@echo "\n========== STAGE: publish pacts ==========\n"
@@ -26,7 +26,7 @@ publish_pacts: .env
 ## Build/test tasks
 ## =====================
 
-test: .env
+test_pact: .env
 	@echo "\n========== STAGE: test (pact) ==========\n"
 	npm run test
 
