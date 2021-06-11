@@ -5,7 +5,7 @@ import {url, port, pact} from '../test/setupPact'
 require('dotenv').config()
 
 describe('Demo test', () => {
-    describe('Getting all products', () => {
+    describe('Getting all products test', () => {
 
         // (2) Start the mock server
         beforeAll(() => pact.setup());
