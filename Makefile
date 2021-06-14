@@ -19,7 +19,7 @@ ci: test_pact publish_pacts
 
 publish_pacts: .env
 	@echo "\n========== STAGE: publish pacts ==========\n"
-	@"${PACT_CLI}" publish ${PWD}/pacts --consumer-app-version ${TRAVIS_COMMIT} --tag ${TRAVIS_BRANCH}
+	@"${PACT_CLI}" publish ${PWD}/pacts --consumer-app-version ${TRAVIS_COMMIT.substring(0,8)} --tag ${TRAVIS_BRANCH}
 
 ## =====================
 ## Build/test tasks
