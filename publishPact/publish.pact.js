@@ -4,7 +4,8 @@ const exec =  require('child_process');
 require('dotenv').config();
 
 const gitHash = exec.execSync('git rev-parse --short HEAD').toString().trim();
-const gitBranch = exec.execSync('git branch --show-current').toString().trim();
+let gitBranch = exec.execSync('git branch --show-current').toString().trim();
+if(gitBranch === "") gitBranch = process.env.GIT_BRANCH;
 
 const opts = {
     pactFilesOrDirs: [path.resolve(process.cwd(), `pacts/${process.env.CONSUMER_NAME}-${process.env.PROVIDER_NAME}.json`)],
